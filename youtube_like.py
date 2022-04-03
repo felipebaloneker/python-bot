@@ -2,6 +2,11 @@ import pyautogui
 import webbrowser
 import time 
 import json
+import sys
+from PyQt5 import QtWidgets
+from PyQt5 import QtGui
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from selenium import webdriver;
 
 def window():
     def runBot():
