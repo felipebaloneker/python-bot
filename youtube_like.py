@@ -8,46 +8,42 @@ from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from selenium import webdriver;
 
+file = open('accounts.json')
+data = json.load(file)
+
 def window():
     def runBot():
-        file = open('accounts.json')
-        data = json.load(file)
         link = linkInput.text()
-
         for i in data['values']:
-            print(i["name"])
             webbrowser.open('https://google.com')
             time.sleep(2)
-
             pyautogui.hotkey('command','shift','n')
-
-            pyautogui.click(408,80, duration=3)
-
+            time.sleep(2)
+            pyautogui.hotkey('command','l')
             pyautogui.typewrite('https://www.youtube.com')
-            time.sleep(5)
             pyautogui.hotkey('enter')
-
-            time.sleep(5)
-            pyautogui.click(700,160, duration=2)
-            time.sleep(8)
+            time.sleep(2)
+            pyautogui.click(1200,160, duration=2)
+            time.sleep(2)
             pyautogui.click(600,400)
-            time.sleep(6)
+            time.sleep(2)
             pyautogui.typewrite(i['name'])
             pyautogui.hotkey('enter')
-            time.sleep(6)
+            time.sleep(4)
             pyautogui.typewrite(i['password'])
             pyautogui.hotkey('enter')
-            time.sleep(6)
-            pyautogui.click(486,633)
-            time.sleep(8)
-            pyautogui.click(408,80, duration=3)
+            time.sleep(3)
+            pyautogui.hotkey('command','l')
             pyautogui.typewrite(link)
-            time.sleep(8)
-            pyautogui.click(305,680)
-            time.sleep(6)
-            pyautogui.hotkey('command','q')
-            time.sleep(1)
-            pyautogui.hotkey('command','q')
+            pyautogui.hotkey('enter')
+            time.sleep(3)
+            pyautogui.click(310,680)
+            time.sleep(3)
+            pyautogui.click(70,10)
+            pyautogui.click(70,275)
+            time.sleep(2)
+            webbrowser.open('https://google.com')
+            time.sleep(2)
 
 
     
