@@ -21,30 +21,23 @@ def window():
             # Open anonimus tab
             pyautogui.hotkey('command','shift','n')
             time.sleep(2)
-            # Open youtube
+            # Open instagram
             pyautogui.hotkey('command','l')
-            pyautogui.typewrite('https://www.youtube.com')
+            pyautogui.typewrite('https://www.instagram.com')
             pyautogui.hotkey('enter')
-            time.sleep(2)
-            # Sigin youtube
-            pyautogui.click(1200,160, duration=2)
-            time.sleep(2)
-            pyautogui.click(600,400)
-            time.sleep(2)
+            time.sleep(8)
+            pyautogui.click(760,325)
             pyautogui.typewrite(i['name'])
-            pyautogui.hotkey('enter')
-            time.sleep(4)
+            pyautogui.click(760,370)
             pyautogui.typewrite(i['password'])
             pyautogui.hotkey('enter')
-            time.sleep(3)
             # Open link
             pyautogui.hotkey('command','l')
             pyautogui.typewrite(link)
             pyautogui.hotkey('enter')
             time.sleep(3)
-            # like video 
-            pyautogui.click(310,680)
-            time.sleep(3)
+            # get like
+            pyautogui.click(800, 760)
             # close tab
             pyautogui.click(70,10)
             pyautogui.click(70,275)
@@ -59,10 +52,10 @@ def window():
     app = QApplication(sys.argv)
     win = QMainWindow()
     win.setGeometry(200, 200, 300, 150)
-    win.setWindowTitle("YouTube LikeBot")
+    win.setWindowTitle("Instagram LikeBot")
 
     linkLabel = QtWidgets.QLabel(win)
-    linkLabel.setText("Video Link")
+    linkLabel.setText("Post Link")
     linkLabel.move(15, 20)
     linkInput = QtWidgets.QLineEdit(win)
     linkInput.setGeometry(110, 10, 191, 20)
