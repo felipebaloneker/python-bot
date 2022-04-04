@@ -11,17 +11,18 @@ from selenium import webdriver;
 #application
 def window():
     def runBot():
-        #time to refresh page (seconds)
+
         Timer = int(timeInput.text())
         link = linkInput.text()
         views = 1000
-        webbrowser.open(link)
+        
+        webbrowser.open('https://google.com')
         # Open anonimus tab
         pyautogui.hotkey('command','shift','n')
         time.sleep(2)
         # Open youtube
         pyautogui.hotkey('command','l')
-        pyautogui.typewrite('https://www.youtube.com')
+        pyautogui.typewrite(link)
         pyautogui.hotkey('enter')
         time.sleep(2)
         for i in range(views):
