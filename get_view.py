@@ -13,16 +13,17 @@ def window():
     def runBot():
         #time to refresh page (seconds)
         Timer = int(timeInput.text())
-
-        #youtube link
         link = linkInput.text()
-
-        #number of views
         views = 1000
-        
-
         webbrowser.open(link)
-
+        # Open anonimus tab
+        pyautogui.hotkey('command','shift','n')
+        time.sleep(2)
+        # Open youtube
+        pyautogui.hotkey('command','l')
+        pyautogui.typewrite('https://www.youtube.com')
+        pyautogui.hotkey('enter')
+        time.sleep(2)
         for i in range(views):
             time.sleep(Timer)
             pyautogui.hotkey('command','shift','r')
