@@ -17,10 +17,9 @@ def window():
         views = 1000
         
         webbrowser.open('https://google.com')
-        # Open anonimus tab
+        time.sleep(2)
         pyautogui.hotkey('command','shift','n')
         time.sleep(2)
-        # Open youtube
         pyautogui.hotkey('command','l')
         pyautogui.typewrite(link)
         pyautogui.hotkey('enter')
