@@ -15,27 +15,74 @@ def window():
     def runBot():
         link = linkInput.text()
         for i in data['values']:
+            name = i['name'].split("@")
             # open browser
             webbrowser.open('https://google.com')
             time.sleep(2)
             # Open anonimus tab
             pyautogui.hotkey('command','shift','n')
             time.sleep(2)
+
             # Open instagram
             pyautogui.hotkey('command','l')
             pyautogui.typewrite('https://www.instagram.com')
             pyautogui.hotkey('enter')
             time.sleep(8)
-            pyautogui.click(760,325)
+            pyautogui.click(915,600)
+            time.sleep(5)
+            pyautogui.click(600,400)
             pyautogui.typewrite(i['name'])
-            pyautogui.click(760,370)
+            pyautogui.hotkey('tab')
+            pyautogui.typewrite(name)
+            pyautogui.hotkey('tab')
+            pyautogui.typewrite(name[0:5])
+            pyautogui.click(750,490)
+            pyautogui.hotkey('tab')
             pyautogui.typewrite(i['password'])
             pyautogui.hotkey('enter')
-            # Open link
+            time.sleep(5)
+
+            #add birthday
+            pyautogui.click(725,400)
+            pyautogui.hotkey('1')      
+            pyautogui.hotkey('enter')      
+            pyautogui.click(640,500)
+            time.sleep(3)
+
+            # Open gmail and get code
+            pyautogui.hotkey('command','t')
+            time.sleep(2)
             pyautogui.hotkey('command','l')
-            pyautogui.typewrite(link)
+            pyautogui.typewrite('https://www.google.com/')
             pyautogui.hotkey('enter')
             time.sleep(3)
+            pyautogui.click(1180,165)
+            time.sleep(3)
+            pyautogui.typewrite(i['name'])
+            pyautogui.hotkey('enter')
+            time.sleep(3)
+            pyautogui.typewrite(i['password'])
+            pyautogui.hotkey('enter')
+            time.sleep(3)
+            pyautogui.click(1170,160)
+            time.sleep(8)
+            pyautogui.click(580,160)
+            pyautogui.typewrite('instagram')
+            time.sleep(2)
+            pyautogui.click(590,310)
+            time.sleep(2)
+            pyautogui.moveTo(760,630)
+            pyautogui.click(button='right')
+            pyautogui.click(830,608)
+            time.sleep(2)
+            pyautogui.hotkey('ctrl', 'shift', 'tab')
+            time.sleep(2)
+            pyautogui.click(630,390)
+            pyautogui.hotkey('command', 'v')
+            pyautogui.click(630,440)
+
+
+
             # get like
             pyautogui.click(800, 760)
             # close tab
@@ -51,7 +98,7 @@ def window():
     app = QApplication(sys.argv)
     win = QMainWindow()
     win.setGeometry(200, 200, 300, 150)
-    win.setWindowTitle("Instagram LikeBot")
+    win.setWindowTitle("Instagram Singup")
 
     linkLabel = QtWidgets.QLabel(win)
     linkLabel.setText("Post Link")

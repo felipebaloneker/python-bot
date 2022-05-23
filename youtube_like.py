@@ -15,6 +15,7 @@ def window():
     def runBot():
         link = linkInput.text()
         for i in data['values']:
+            print(i['name'])
             # open browser
             webbrowser.open('https://google.com')
             time.sleep(2)
@@ -44,14 +45,13 @@ def window():
             time.sleep(3)
             # like video 
             pyautogui.click(310,680)
-            time.sleep(3)
+            time.sleep(5)
             # close tab
             pyautogui.click(70,10)
             pyautogui.click(70,275)
             time.sleep(2)
             #reopen tab
-            webbrowser.open('https://google.com')
-            time.sleep(2)
+            time.sleep(120)
 
 
     
