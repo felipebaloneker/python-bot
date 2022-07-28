@@ -1,4 +1,4 @@
-#Selenium Webdriver must be installed for this to work
+# Install requiriments in requiriments.txt
 import time;
 import pyautogui
 import webbrowser
@@ -17,19 +17,38 @@ def window():
             
             webbrowser.open('https://google.com')
             time.sleep(2)
-            pyautogui.hotkey('command','shift','n')
+            
+            # pyautogui.hotkey('command','shift','n')
+            pyautogui.hotkey('ctrl','shift','n')
             time.sleep(2)
-            pyautogui.hotkey('command','l')
+            
+            # pyautogui.hotkey('command','l')
+            pyautogui.hotkey('ctrl','l')
             pyautogui.typewrite(link)
             pyautogui.hotkey('enter')
             time.sleep(10)
-            pyautogui.click(1160,160)
-            time.sleep(6)
-            # close tab
+            # pyautogui.click(1160,160)
+            pyautogui.click(-480,130)
+            
+            time.sleep(25)
+            pyautogui.click(-1110,458)
             time.sleep(2)
-            pyautogui.click(70,10)
-            pyautogui.click(70,275)
+            pyautogui.hotkey('ctrl','w')
+            pyautogui.click(-1110,458)
             time.sleep(2)
+            pyautogui.hotkey('ctrl','w')
+            pyautogui.click(-1110,458)
+            time.sleep(2)
+            # close tab MacOS
+            # time.sleep(2)
+            # pyautogui.click(70,10)
+            # pyautogui.click(70,275)
+            # time.sleep(2)
+
+            time.sleep(2)
+            pyautogui.hotkey('ctrl','w')
+            time.sleep(2)
+            pyautogui.hotkey('ctrl','w')
             #reopen tab
             time.sleep(2)
         
