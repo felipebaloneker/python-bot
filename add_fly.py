@@ -11,7 +11,7 @@ from selenium import webdriver;
 #application
 def window():
     def runBot():
-        click = clickInput.text()
+        click = int(clickInput.text())
         for i in range(click):
             link = linkInput.text()
             
@@ -22,15 +22,16 @@ def window():
             pyautogui.hotkey('command','l')
             pyautogui.typewrite(link)
             pyautogui.hotkey('enter')
-            time.sleep(6)
+            time.sleep(10)
             pyautogui.click(1160,160)
+            time.sleep(6)
             # close tab
+            time.sleep(2)
             pyautogui.click(70,10)
             pyautogui.click(70,275)
             time.sleep(2)
             #reopen tab
             time.sleep(2)
-    
         
 #------WINDOW------------
     app = QApplication(sys.argv)
